@@ -15,11 +15,11 @@ This repository contains Arduino code for sending temperature and humidity data 
 - [How it Works](#how-it-works)
 - [Getting Started](#getting-started)
 
-## Client Part
+### Client Part
 
-## Overview
+## How it Works
 
-The client part of the project reads temperature and humidity data from a DHT11 sensor and transmits it using LoRa protocol. The data is packaged in JSON format and sent to the LoRa receiver (server).
+The client reads temperature and humidity data from the DHT sensor, packages it in JSON format, and sends it via LoRa to the server. The data is periodically sent in 5-second intervals.
 
 ## Hardware Requirements
 
@@ -27,25 +27,17 @@ The client part of the project reads temperature and humidity data from a DHT11 
 - LoRa module (Ra-02)
 - DHT sensor (DHT11)
 
+### Server Part
+
 ## How it Works
 
-The client reads temperature and humidity data from the DHT sensor, packages it in JSON format, and sends it via LoRa to the server. The data is periodically sent in 5-second intervals.
-
-## Server Part
-
-## Overview
-
-The server part of the project receives LoRa packets, extracts the JSON data, and processes it. In this example, if the humidity is above 30% and the temperature is above 32°C, a fan is turned on.
+The server receives LoRa packets, extracts the JSON data, and checks the humidity and temperature values. If they meet the specified conditions, it controls a fan (or other device).
 
 ## Hardware Requirements
 
 - ESP-WROOM-32
 - LoRa module (Ra-02)
 - Fan (or any other device to control)
-
-### How it Works
-
-The server receives LoRa packets, extracts the JSON data, and checks the humidity and temperature values. If they meet the specified conditions, it controls a fan (or other device).
 
 ## LoRa Module Pin Connections to ESP32
 
