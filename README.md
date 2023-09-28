@@ -15,7 +15,7 @@ This repository contains Arduino code for sending temperature and humidity data 
 - [How it Works](#how-it-works)
 - [Getting Started](#getting-started)
 
-<center>## Client Part</center>
+## Client Part
 
 ## How it Works
 
@@ -27,9 +27,7 @@ The client reads temperature and humidity data from the DHT sensor, packages it 
 - LoRa module (Ra-02)
 - DHT sensor (DHT11)
 
-<center>
 ## Server Part
-</center>
 
 ## How it Works
 
