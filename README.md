@@ -15,9 +15,7 @@ This repository contains Arduino code for sending temperature and humidity data 
 - [How it Works](#how-it-works)
 - [Getting Started](#getting-started)
 
-<center>
-## Client Part
-</center>
+<center>## Client Part</center>
 
 ## How it Works
 
