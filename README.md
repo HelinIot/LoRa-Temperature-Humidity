@@ -47,8 +47,8 @@ The server receives LoRa packets, extracts the JSON data, and checks the humidit
 | GND       | GND        | Ground        |
 | 3.3V      | 3.3V       | 3.3V Power    |
 | DIO0      | GPIO 2     | Digital Input/Output 0 |
-| RESET     | GPIO 14    | Reset         |
-| NSS       | GPIO 5     | Slave Select  |
+| RESET     | GPIO 5     | Reset         |
+| NSS       | GPIO 4     | Slave Select  |
 | SCK       | GPIO 18    | Serial Clock  |
 | MOSI      | GPIO 23    | Master Out Slave In |
 | MISO      | GPIO 19    | Master In Slave Out |
