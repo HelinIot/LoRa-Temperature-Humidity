@@ -1,0 +1,49 @@
+// test connection between ESP#@ and LoRa-02 module
+
+#include <SPI.h>
+#include <RH_RF95.h>
+
+#define RFM95_CS 5       //NSS
+#define RFM95_RST 14     //Reset
+#define RFM95_INT 2     //DIO0
+
+//Change to 433.0 or other frequency, must match RX's freq!
+#define RF95_FREQ 433.0
+
+//Singleton instance of the radio driver
+RH_RF95 rf95(RFM95_CS, RFM95_INT);
+
+void setup(){
+  pinMode(RFM95_RST, OUTPUT);
+  digitalWrite(RFM95_RST, HIGH);
+
+  Serial.begin(115200);
+    while (!Serial);
+
+  delay(100);
+
+  //Manual Reset
+  digitalWrite(RFM95_RST, LOW);
+  delay(10);
+  digitalWrite(RFM95_RST, HIGH);
+  delay(10);
+
+  while (!rf95.init()) {
+    Serial.println(">> LoRa radio initialization failed.");
+    while (1);
+  }
+
+  //Defaults after init are 433.0MHz, modulation GFSK_Rb250Fd250, +13dbM
+  if (!rf95.setFrequency(RF95_FREQ)) {
+    Serial.println(">> Set frequency failed.");
+    while (1);
+  }
+
+  rf95.setTxPower(18);
+  Serial.println(">> LoRa radio initialized successfully.");
+}
+
+void loop()
+{
+  delay(1000);
+}
