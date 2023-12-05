@@ -3,8 +3,8 @@
 #include <SPI.h>
 #include <RH_RF95.h>
 
-#define RFM95_CS 5       //NSS
-#define RFM95_RST 14     //Reset
+#define RFM95_CS 4       //NSS
+#define RFM95_RST 5     //Reset
 #define RFM95_INT 2     //DIO0
 
 //Change to 433.0 or other frequency, must match RX's freq!
